@@ -1,0 +1,10 @@
+The Document Object Model (DOM) is built on three main pillars:
+1)Structure
+2)Content
+3)Behavior
+
+1)স্ট্রাকচার (Structure): DOM একটি ডকুমেন্টের কাঠামোকে একটি গাছের মতো নোডের আকারে উপস্থাপন করে। সাধারণত এটি HTML বা XML ডকুমেন্ট হতে পারে। প্রতিটি এলিমেন্ট, অ্যাট্রিবিউট এবং টেক্সটকে একটি নোড হিসেবে উপস্থাপন করা হয়, যেখানে পুরো ডকুমেন্টটি মূল (root) নোড হিসেবে কাজ করে। এই কাঠামোটি ডেভেলপারদেরকে ডকুমেন্টের এলিমেন্টগুলোকে প্রোগ্রামেটিক্যালি (কোডের মাধ্যমে) নেভিগেট এবং ম্যানিপুলেট করতে সহায়তা করে।
+
+2)Content: The DOM provides access to the content within the document. This includes the text inside elements, attributes of elements, and the ability to dynamically modify, add, or remove elements and content.
+
+3)বিহেভিয়ার (Behavior): DOM ইভেন্ট এবং স্ক্রিপ্টিং-এর মাধ্যমে ডকুমেন্টের সাথে ইন্টার‍্যাক্ট করার সুবিধা দেয়। ডেভেলপাররা জাভাস্ক্রিপ্ট ব্যবহার করে ইভেন্ট লিসেনার (event listener) যোগ করতে, ব্যবহারকারীর কার্যকলাপের প্রতিক্রিয়া জানাতে, এবং ব্যবহারকারীর ইন্টার‍্যাকশনের ভিত্তিতে ডকুমেন্টের স্ট্রাকচার ও কন্টেন্ট পরিবর্তন করতে পারেন। এভাবে ডকুমেন্টের বিহেভিয়ার নিয়ন্ত্রণ করা যায়।

@@ -1,0 +1,110 @@
+Below are examples for each of the DOM selection methods in JavaScript:
+
+1. document.getElementById()
+Description: Selects an element by its unique ID.
+
+const element = document.getElementById('myId');
+console.log(element); // Logs the element with ID 'myId'
+
+2. document.getElementsByClassName()
+Description: Selects all elements with a specific class name.
+
+const elements = document.getElementsByClassName('myClass');
+console.log(elements); // Logs a live HTMLCollection of elements with class 'myClass'
+
+
+3. document.getElementsByTagName()
+Description: Selects all elements with a specific tag name.
+
+const elements = document.getElementsByTagName('div');
+console.log(elements); // Logs a live HTMLCollection of all <div> elements
+
+
+4. document.getElementsByName()
+Description: Selects all elements with a specific name attribute.
+
+const elements = document.getElementsByName('myName');
+console.log(elements); // Logs a NodeList of elements with name 'myName'
+
+
+5. document.querySelector()
+Description: Selects the first element that matches a specified CSS selector.
+
+const element = document.querySelector('.myClass');
+console.log(element); // Logs the first element with class 'myClass'
+
+
+6. document.querySelectorAll()
+Description: Selects all elements that match a specified CSS selector.
+
+const elements = document.querySelectorAll('.myClass');
+console.log(elements); // Logs a static NodeList of all elements with class 'myClass'
+
+
+7. document.forms
+Description: Selects all <form> elements in the document.
+
+const forms = document.forms;
+console.log(forms); // Logs a live HTMLCollection of all <form> elements
+
+
+8. document.images
+Description: Selects all <img> elements in the document.
+
+const images = document.images;
+console.log(images); // Logs a live HTMLCollection of all <img> elements
+
+
+9. document.links
+Description: Selects all <a> elements that have an href attribute.
+
+const links = document.links;
+console.log(links); // Logs a live HTMLCollection of all <a> elements with an href attribute
+
+
+10. document.scripts
+Description: Selects all <script> elements in the document.
+
+const scripts = document.scripts;
+console.log(scripts); // Logs a live HTMLCollection of all <script> elements
+
+
+11. document.anchors
+Description: Selects all <a> elements with a name attribute (deprecated in HTML5).
+
+const anchors = document.anchors;
+console.log(anchors); // Logs a live HTMLCollection of all <a> elements with a name attribute
+
+
+12. Traversal Properties [*****]
+Description: Selects elements relative to a given element.
+
+const element = document.getElementById('myId');
+
+const parent = element.parentNode;
+console.log(parent); // Logs the parent of the element
+
+const children = element.children;
+console.log(children); // Logs a live HTMLCollection of child elements
+
+const firstChild = element.firstElementChild;
+console.log(firstChild); // Logs the first child element
+
+const lastChild = element.lastElementChild;
+console.log(lastChild); // Logs the last child element
+
+const nextSibling = element.nextElementSibling;
+console.log(nextSibling); // Logs the next sibling element
+
+const previousSibling = element.previousElementSibling;
+console.log(previousSibling); // Logs the previous sibling element
+
+
+
+13. Custom JavaScript Selection
+Description: Use JavaScript logic to filter elements.
+
+const divs = document.getElementsByTagName('div');
+const filteredDivs = Array.from(divs).filter(element => element.textContent.includes('Hello'));
+console.log(filteredDivs); // Logs an array of <div> elements that contain the text 'Hello'
+
