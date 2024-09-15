@@ -1,0 +1,90 @@
+JavaScript, manipulating the DOM
+
+
+1. getElementById()
+This method is used to select an element by its id attribute.
+
+let element = document.getElementById("myId");
+
+Example:
+<div id="myId">Hello</div>
+<script>
+  let element = document.getElementById("myId");
+  console.log(element);  // Outputs: <div id="myId">Hello</div>
+</script>
+
+
+2. getElementsByClassName()
+This method selects all elements that have a specific class name. It returns an HTMLCollection, which is a collection of elements.
+
+let elements = document.getElementsByClassName("myClass");
+
+Example:
+
+<div class="myClass">First</div>
+<div class="myClass">Second</div>
+<script>
+  let elements = document.getElementsByClassName("myClass");
+  console.log(elements);  // Outputs: HTMLCollection(2) [div.myClass, div.myClass]
+</script>
+
+
+3. getElementsByTagName()
+This method selects all elements with a specific tag name (e.g., div, p, h1). It also returns an HTMLCollection.
+
+let elements = document.getElementsByTagName("p");
+
+Example:
+
+<p>First paragraph</p>
+<p>Second paragraph</p>
+<script>
+  let elements = document.getElementsByTagName("p");
+  console.log(elements);  // Outputs: HTMLCollection(2) [p, p]
+</script>
+
+
+4. querySelector()
+This method selects the first element that matches a CSS selector. You can use any CSS selector, such as an element, class, or id.
+
+let element = document.querySelector(".myClass");
+
+Example:
+
+<div class="myClass">Hello</div>
+<script>
+  let element = document.querySelector(".myClass");
+  console.log(element);  // Outputs: <div class="myClass">Hello</div>
+</script>
+
+
+5. querySelectorAll()
+This method selects all elements that match a CSS selector and returns a NodeList, which is similar to an array.
+
+let elements = document.querySelectorAll(".myClass");
+
+Example:
+
+<div class="myClass">First</div>
+<div class="myClass">Second</div>
+<script>
+  let elements = document.querySelectorAll(".myClass");
+  console.log(elements);  // Outputs: NodeList(2) [div.myClass, div.myClass]
+</script>
+
+
+6. getElementsByName()
+This method is used to select elements by their name attribute, commonly used in forms.
+
+let elements = document.getElementsByName("username");
+
+Example:
+
+<input type="text" name="username" />
+<script>
+  let elements = document.getElementsByName("username");
+  console.log(elements);  // Outputs: NodeList [input]
+</script>
+
+
+
