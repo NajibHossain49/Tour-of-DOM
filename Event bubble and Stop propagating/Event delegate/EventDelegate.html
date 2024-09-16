@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Delegation Example</title>
+</head>
+
+<body>
+
+    <ul id="item-list">
+        <li class="li-items">Item 1</li>
+        <li class="li-items">Item 2</li>
+        <li class="li-items">Item 3</li>
+        <li class="li-items">Item 4</li>
+        <li class="li-items">Item 5</li>
+        <li class="li-items">Item 6</li>
+        <li class="li-items">Item 7</li>
+        <li class="li-items">Item 8</li>
+        <li class="li-items">Item 9</li>
+        <li class="li-items">Item 10</li>
+        <li class="li-items">Item 11</li>
+        <li class="li-items">Item 12</li>
+    </ul>
+
+    <button id="button" type="button">Add Items</button>
+
+
+    <!-- Script -->
+    <script>
+        // Get all elements with the class 'li-items'
+        const listItems = document.getElementsByClassName('li-items');
+
+        // Loop through the listItems using for...of
+        for (let index of listItems) {
+            index.addEventListener('click', function (event) {
+                event.target.parentNode.removeChild(event.target);
+            });
+        }
+
+        // Fix: Changed 'getElementsById' to 'getElementById'
+        const buttonItems = document.getElementById('button').addEventListener('click', function () {
+            const itemList = document.getElementById('item-list'); // Fix: Correct method for 'item-list'
+            const li = document.createElement('li');
+            li.innerText = 'Item Added'; // Updated text content for new item
+            li.classList.add('li-items'); // Fix: Add class 'li-items' to new list item
+            itemList.appendChild(li);
+
+            // Add event listener for the newly created item
+            li.addEventListener('click', function (event) {
+                event.target.parentNode.removeChild(event.target);
+            });
+        });
+    </script>
+</body>
+
+</html>
