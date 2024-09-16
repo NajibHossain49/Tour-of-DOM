@@ -1,0 +1,39 @@
+<!-- 
+stopImmediatePropagation() একটি JavaScript মেথড, যা ইভেন্টের প্রভাবকে আরও বেশি নিয়ন্ত্রণ করতে দেয়। এটি ইভেন্টের সব হ্যান্ডলার (event handlers)-এর এক্সিকিউশন একেবারে বন্ধ করে দেয়, এমনকি যদি একই ইভেন্টের জন্য আরও হ্যান্ডলার সংযুক্ত থাকে। পাশাপাশি, এটি ইভেন্টকে উপরের দিকে (parent elements) প্রোপাগেট করাও বন্ধ করে।
+
+অর্থাৎ, যেখানে stopPropagation() শুধুমাত্র ইভেন্ট বাবলিং (প্যারেন্ট উপাদানে যাওয়া) বন্ধ করে, সেখানে stopImmediatePropagation() ইভেন্টের চলমান সব হ্যান্ডলারকে অবিলম্বে থামিয়ে দেয় এবং বাবলিংও বন্ধ করে।
+
+উদাহরণ: 
+
+-->
+
+
+<button id="myButton">Click Me</button>
+
+<script>
+    // প্রথম ইভেন্ট হ্যান্ডলার
+    document.getElementById("myButton").addEventListener("click", function () {
+        alert("First handler executed!");
+    });
+
+    // দ্বিতীয় ইভেন্ট হ্যান্ডলার
+    document.getElementById("myButton").addEventListener("click", function (event) {
+        alert("Second handler executed!");
+        event.stopImmediatePropagation();  // ইভেন্ট প্রোপাগেশন এবং অন্যান্য হ্যান্ডলার বন্ধ
+    });
+
+    // তৃতীয় ইভেন্ট হ্যান্ডলার
+    document.getElementById("myButton").addEventListener("click", function () {
+        alert("Third handler executed!");
+    });
+</script>
+
+
+<!-- 
+
+ব্যাখ্যা:
+যদি আপনি myButton-এ ক্লিক করেন, প্রথম এবং দ্বিতীয় হ্যান্ডলার চালু হবে।
+কিন্তু দ্বিতীয় হ্যান্ডলার stopImmediatePropagation() ব্যবহার করেছে, তাই তৃতীয় হ্যান্ডলারটি আর চলবে না এবং কোন প্যারেন্ট উপাদানে ইভেন্ট বাবল করবে না।
+অর্থাৎ, stopImmediatePropagation() হ্যান্ডলারের এক্সিকিউশনকে তৎক্ষণাৎ বন্ধ করে দেয় এবং ইভেন্টটি আর অন্য কোনো হ্যান্ডলার বা প্যারেন্ট পর্যন্ত পৌঁছায় না।
+
+-->

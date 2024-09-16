@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>stopPropagation</title>
+</head>
+
+<body>
+    <!-- 
+    Stop Event Propagation
+ইভেন্ট বাবলিং বন্ধ করতে এবং ইভেন্টটিকে প্যারেন্ট উপাদানগুলোতে পৌঁছানো থেকে আটকাতে, আমরা stopPropagation() মেথডটি ব্যবহার করতে পারি। এই মেথডটি ইভেন্টটিকে DOM ট্রি-তে উপরের দিকে যেতে বাধা দেয়।
+
+উদাহরণে stopPropagation() ব্যবহার:
+    
+    -->
+
+    <div id="parent" style="padding:20px; background-color:lightblue;">
+        প্যারেন্ট ডিভ
+        <button id="child">চাইল্ড বাটন</button>
+    </div>
+
+    <script>
+        document.getElementById("parent").addEventListener("click", function () {
+            alert("প্যারেন্ট ডিভ ক্লিক হয়েছে!");
+        });
+
+        document.getElementById("child").addEventListener("click", function (event) {
+            alert("চাইল্ড বাটন ক্লিক হয়েছে!");
+            event.stopPropagation();  // ইভেন্টটি প্যারেন্টে যেতে বাধা দেয়া হয়েছে
+        });
+    </script>
+
+
+</body>
+
+</html>
+
+<!-- 
+
+এখন, আপনি যখন চাইল্ড বাটন-এ ক্লিক করবেন, শুধুমাত্র চাইল্ড বাটন-এর ইভেন্ট ট্রিগার হবে, কিন্তু প্যারেন্ট ডিভ-এর ইভেন্ট চালু হবে না, কারণ আমরা stopPropagation() ব্যবহার করে ইভেন্ট বাবলিং বন্ধ করেছি।
+-->
