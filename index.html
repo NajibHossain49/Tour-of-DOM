@@ -30,7 +30,7 @@
     </div>
 
     <!-- Script -->
-    <script>
+    <!-- <script>
         document.getElementById("button").addEventListener('click', function () {
             let commentBox = document.getElementById('textarea');
             let newComment = commentBox.value;
@@ -43,6 +43,42 @@
 
             commentBox.value = ''
         })
+    </script> -->
+
+    <!-- Script -->
+    <script>
+        // Load comments from localStorage and display them
+        window.onload = function () {
+            let storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+            let commentContainer = document.getElementById('comment-container');
+
+            storedComments.forEach(comment => {
+                let h3 = document.createElement('h3');
+                h3.innerText = comment;
+                commentContainer.appendChild(h3);
+            });
+        }
+
+        // Add new comment
+        document.getElementById("button").addEventListener('click', function () {
+            let commentBox = document.getElementById('textarea');
+            let newComment = commentBox.value;
+
+            if (newComment) {
+                let commentContainer = document.getElementById('comment-container');
+                let h3 = document.createElement('h3');
+                h3.innerText = newComment;
+                commentContainer.appendChild(h3);
+
+                // Save the new comment to localStorage
+                let storedComments = JSON.parse(localStorage.getItem('comments')) || [];
+                storedComments.push(newComment);
+                localStorage.setItem('comments', JSON.stringify(storedComments));
+
+                // Clear the textarea
+                commentBox.value = '';
+            }
+        });
     </script>
 </body>
 

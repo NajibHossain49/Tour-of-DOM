@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1 id="Secret-info">
+        My Secret Info
+    </h1>
+
+    <input type="text" name="" id="input-field" placeholder="Please type Delete ">
+
+    <button type="button" id="Delete-Button" disabled>Delete</button>
+
+
+
+
+
+
+
+
+
+    <!-- Script -->
+    <script>
+        document.getElementById('input-field').addEventListener('keyup', function (event) {
+            let text = event.target.value;
+            let deleteButton = document.getElementById('Delete-Button')
+            if (text === "Delete") {
+                deleteButton.disabled = false;
+            }
+            else {
+                deleteButton.disabled = true;
+            }
+        })
+
+        document.getElementById('Delete-Button').addEventListener('click', function () {
+            let Secret = document.getElementById('Secret-info');
+            Secret.style.display = 'none'
+        })
+
+
+    </script>
+</body>
+
+</html>
